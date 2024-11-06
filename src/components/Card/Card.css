@@ -1,0 +1,13 @@
+.card-main-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.card-wrapper{
+    width: 1000px;
+    height: 500px;
+}
