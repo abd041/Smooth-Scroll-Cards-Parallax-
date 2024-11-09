@@ -3,16 +3,11 @@ import "./Card.css";
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Card = ({ title, description, src, link, color , i }) => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: container,
-    offset: ["start end", "start start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const { scrollYProgress } = useScroll();  // Removed the container reference for global scroll
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]); // Adjust scale range if needed
 
   return (
-    <div className='card-main-wrapper' ref={container}>
+    <div className='card-main-wrapper'>
       <motion.div className='card-wrapper' style={{ background: color, top :`calc(-5vh + ${i * 25}px)`}}>
         {/* Use motion.img for animation */}
         <motion.img 

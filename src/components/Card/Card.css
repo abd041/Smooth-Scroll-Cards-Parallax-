@@ -12,6 +12,7 @@
     height: 500px;
     border-radius: 25px;
     position: relative;
+    overflow: hidden;  /* Ensure image doesn’t overflow when scaling */
 }
 
 .card-wrapper > img {
@@ -20,4 +21,5 @@
     object-fit: cover;
     border-radius: inherit;
     background-position: center;
+    transition: transform 0.3s ease; /* Optional for smoother scaling */
 }

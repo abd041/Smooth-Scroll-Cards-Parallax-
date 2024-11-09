@@ -1,15 +1,23 @@
-import './App.css';
-import Card from './components/Card/Card';
-import { projects } from './components/data';
-
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import Header from "./components/Header/Header";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
-    <div className=''>
-     {projects.map((project ,index)=>{
-      return(<Card {...project} key={index} i={index}/>)
-     })}
-    </div>
+    <>
+      <Header />
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 }
 
