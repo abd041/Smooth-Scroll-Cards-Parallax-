@@ -7,7 +7,7 @@ function App() {
   return (
     <div className=''>
      {projects.map((project ,index)=>{
-      return(<Card {...project} key={index}/>)
+      return(<Card {...project} key={index} i={index}/>)
      })}
     </div>
   );
