@@ -1,0 +1,13 @@
+/* Inner.css */
+.inner-wrapper {
+    position: relative; /* Provides positioning context */
+    overflow: hidden; /* Optional: hides elements sliding out */
+}
+
+.inner-slider {
+    position: fixed; /* Allows the `top` property to work */
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
+import { Inner } from '../../components/animation/Inner'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <Inner>Contact</Inner>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import { Inner } from '../../components/animation/Inner'
 
 const About = () => {
   return (
-    <div>About</div>
+    <Inner>About</Inner>
   )
 }
 

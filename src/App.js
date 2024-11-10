@@ -1,20 +1,24 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Header from "./components/Header/Header";
-import { AnimatePresence } from "framer-motion";
+import { Inner } from "./components/animation/Inner";
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
-      <Header />
+    
       <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+        
+        <Header/>
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Inner><HomePage /></Inner>} />
+          <Route path="/about" element={<Inner><About /></Inner>} />
+          <Route path="/contact" element={<Inner><Contact /></Inner>} />
         </Routes>
       </AnimatePresence>
     </>
